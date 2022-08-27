@@ -15,6 +15,9 @@ public class PROYECTOBEMO {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        modelo.OCconection oc = new modelo.OCconection();
+        
+        oc.getConex();
     }
     
 }

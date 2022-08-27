@@ -18,8 +18,8 @@ import java.util.logging.Logger;
  */
 public class OCconection {
     String cadenaConexion = "jdbc:oracle:thin:@localhost:1521:xe";
-    String pgUsuario = "eddy";
-    String pgContra = "123";
+    String pgUsuario = "EDDY";
+    String pgContra = "1234";
     Connection conex;
     
     public OCconection() {
@@ -35,7 +35,7 @@ public class OCconection {
         } catch (SQLException ex) {
             Logger.getLogger(OCconection.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+       
     }
     
     public ResultSet consulta(String sql) {
@@ -68,6 +68,7 @@ public class OCconection {
     }
 
     public Connection getConex() {
+                System.out.println("conexion aporbada");
         return conex;
     }
 
