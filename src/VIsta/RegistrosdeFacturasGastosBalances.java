@@ -206,14 +206,14 @@ public class RegistrosdeFacturasGastosBalances extends javax.swing.JFrame {
         jLabel6.setText("Hay");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("productos registrados.");
+        jLabel7.setText("gastos corrientes registrados.");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("00");
 
         jLabel9.setText("Para buscar ingresa o el nombre, codigo, o categoria:");
 
-        jButton5.setText("Eliminar prod.");
+        jButton5.setText("Eliminar gasto");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -234,9 +234,9 @@ public class RegistrosdeFacturasGastosBalances extends javax.swing.JFrame {
 
         jButton12.setText("VER DETALLES");
 
-        jButton13.setText("Crear producto");
+        jButton13.setText("Crear gasto");
 
-        jButton14.setText("Modificar prod.");
+        jButton14.setText("Modificar gasto");
 
         jButton15.setText("GENERAR REPORTE");
 
@@ -253,7 +253,7 @@ public class RegistrosdeFacturasGastosBalances extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
                         .addComponent(jButton13)
                         .addGap(30, 30, 30)
                         .addComponent(jButton5)

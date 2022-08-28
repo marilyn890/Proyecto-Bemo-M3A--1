@@ -122,7 +122,7 @@ public class FacturacionVentas extends javax.swing.JFrame {
 
         btAgregarCliente3.setText("+ Nuevo proveedor");
 
-        jButton2.setText("+ Nueva cuenta");
+        jButton2.setText("+ Ver cuentas");
 
         jButton6.setText("+ Cotizar producto");
 
