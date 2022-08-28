@@ -26,6 +26,7 @@ public class FacturacionVentas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jdTotalDevolucion = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -52,6 +53,17 @@ public class FacturacionVentas extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+
+        javax.swing.GroupLayout jdTotalDevolucionLayout = new javax.swing.GroupLayout(jdTotalDevolucion.getContentPane());
+        jdTotalDevolucion.getContentPane().setLayout(jdTotalDevolucionLayout);
+        jdTotalDevolucionLayout.setHorizontalGroup(
+            jdTotalDevolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jdTotalDevolucionLayout.setVerticalGroup(
+            jdTotalDevolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -326,5 +338,6 @@ public class FacturacionVentas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JDialog jdTotalDevolucion;
     // End of variables declaration//GEN-END:variables
 }
