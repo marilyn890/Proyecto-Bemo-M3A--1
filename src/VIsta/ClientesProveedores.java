@@ -83,21 +83,21 @@ public class ClientesProveedores extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel14.setText("Hay");
 
-        jButton27.setText("Crear producto");
+        jButton27.setText("Nuevo cliente");
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel15.setText("productos registrados.");
+        jLabel15.setText("clientes registrados.");
 
-        jButton28.setText("Modificar prod.");
+        jButton28.setText("Modificar client.");
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel16.setText("00");
 
         jButton29.setText("GENERAR REPORTE");
 
-        jLabel17.setText("Para buscar ingresa o el nombre, codigo, o categoria:");
+        jLabel17.setText("Para buscar ingresa o el nombre, apellido, cedula o numero telefonico:");
 
-        jButton23.setText("Eliminar prod.");
+        jButton23.setText("Eliminar client.");
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -190,21 +190,21 @@ public class ClientesProveedores extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel18.setText("Hay");
 
-        jButton32.setText("Crear producto");
+        jButton32.setText("Nuevo proveedor");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel19.setText("productos registrados.");
+        jLabel19.setText("proveedores registrados.");
 
-        jButton33.setText("Modificar prod.");
+        jButton33.setText("Modificar prov.");
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel20.setText("00");
 
         jButton34.setText("GENERAR REPORTE");
 
-        jLabel21.setText("Para buscar ingresa o el nombre, codigo, o categoria:");
+        jLabel21.setText("Para buscar ingresa o el nombre, apellido, cedula o empresa:");
 
-        jButton35.setText("Eliminar prod.");
+        jButton35.setText("Eliminar prov.");
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -234,7 +234,7 @@ public class ClientesProveedores extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                         .addComponent(jButton32)
                         .addGap(30, 30, 30)
                         .addComponent(jButton35)
