@@ -22,7 +22,7 @@ public class OCconection {
     String pgContra = "1234";
     Connection conex;
     
-    public OCconection() {
+    public Connection OCconection() {
 
         try {
             Class.forName("oracle.jdbc.OracleDriver");
@@ -32,10 +32,11 @@ public class OCconection {
 
         try {
             conex = DriverManager.getConnection(cadenaConexion, pgUsuario, pgContra);
+            return conex;
         } catch (SQLException ex) {
             Logger.getLogger(OCconection.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+            return null;
+        }          
     }
     
     public ResultSet consulta(String sql) {

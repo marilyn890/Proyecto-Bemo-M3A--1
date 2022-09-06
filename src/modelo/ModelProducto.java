@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class ModelProducto extends Productos {
 
-    ConexionBD conn = new ConexionBD();
+    OCconection conn = new OCconection();
 
     public ModelProducto() {
     }
@@ -28,7 +28,7 @@ public class ModelProducto extends Productos {
     }
 
     public List<Productos> getproductos() {
-        conn.conectar();
+        conn.OCconection();
 
         List<Productos> listaProductos = new ArrayList<>();
         String sql = "select * from productos";

@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class ModelCategoria extends Categoria {
 
-    ConexionBD conn = new ConexionBD();
+    OCconection conn = new OCconection();
 
     public ModelCategoria() {
     }
@@ -28,7 +28,7 @@ public class ModelCategoria extends Categoria {
     }
 
     public List<Categoria> getcategorias() {
-        conn.conectar();
+        conn.OCconection();
 
         List<Categoria> listaCategorias = new ArrayList<>();
         String sql = "select * from categoria";
