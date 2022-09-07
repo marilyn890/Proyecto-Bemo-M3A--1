@@ -18,11 +18,11 @@ import java.util.logging.Logger;
  */
 public class OCconection {
     String cadenaConexion = "jdbc:oracle:thin:@localhost:1521:XE";
-    String pgUsuario = "abel";
+    String pgUsuario = "EDDY";
     String pgContra = "1234";
     Connection conex;
     
-    public Connection OCconection() {
+    public OCconection() {
 
         try {
             Class.forName("oracle.jdbc.OracleDriver");
@@ -32,11 +32,10 @@ public class OCconection {
 
         try {
             conex = DriverManager.getConnection(cadenaConexion, pgUsuario, pgContra);
-            return conex;
         } catch (SQLException ex) {
             Logger.getLogger(OCconection.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }          
+        }
+       
     }
     
     public ResultSet consulta(String sql) {
