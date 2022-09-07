@@ -36,8 +36,6 @@ public class Modelo_Cliente extends Cliente {
     }
 
     public List<Cliente> getclientes() {
-
-        conexion.OCconection();
         List<Cliente> listaclientes = new ArrayList<Cliente>();
 
         String sql = " select c.cli_id,p.pers_id,p.pers_cedula,p.pers_nombre1,p.pers_nombre2,p.pers_apellido1,p.pers_apellido2,p.pers_direccion,p.pers_telefono,p.pers_email "
@@ -78,8 +76,6 @@ public class Modelo_Cliente extends Cliente {
     }
 
     public int numeroid() {
-
-        conexion.OCconection();
         int id =0;
         String sql = "select max(pers_id) from persona";
         ResultSet rs = conexion.consulta(sql);
@@ -111,7 +107,7 @@ public class Modelo_Cliente extends Cliente {
 
         try {
             //  PreparedStatement ps = mpgc.
-            PreparedStatement ps = conexion.OCconection().prepareStatement(sql);
+            PreparedStatement ps = conexion.conex.prepareStatement(sql);
             ps.setInt(1, getPrs_ID());
             ps.setString(2, getPrs_cedula());
             ps.setString(3, getPrs_nombre1());
@@ -134,7 +130,7 @@ public class Modelo_Cliente extends Cliente {
         String sql = "insert into cliente (cli_id,pers_id) values (?,?)";
         try {
             //  PreparedStatement ps = mpgc.
-            PreparedStatement ps = conexion.OCconection().prepareStatement(sql);
+            PreparedStatement ps = conexion.conex.prepareStatement(sql);
             ps.setInt(1, getCl_ID());
             ps.setInt(2, getPrs_ID());
 
