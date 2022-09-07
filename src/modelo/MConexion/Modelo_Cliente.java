@@ -83,9 +83,7 @@ public class Modelo_Cliente extends Cliente {
         try {
             while (rs.next()) {
                id= rs.getInt(1);
-             
-             
-
+            
             }
         } catch (Exception e) {
             Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, e);
@@ -117,7 +115,7 @@ public class Modelo_Cliente extends Cliente {
             ps.setString(7, getPrs_direccion());
             ps.setString(8, getPrs_telefono());
             ps.setString(9, getPrs_email());
-           ps.executeUpdate();
+            ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, ex);

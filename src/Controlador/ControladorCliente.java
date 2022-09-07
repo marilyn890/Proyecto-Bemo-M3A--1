@@ -94,7 +94,7 @@ public class ControladorCliente {
             vista.getJdCliente().setTitle(titulo);
             vista.getJdCliente().setSize(750, 700);
             vista.getJdCliente().setLocationRelativeTo(vista);
-            vista.getTxtidcliente().setText("CLI "+String.valueOf(modelo.numeroid() + 1));
+            vista.getTxtidcliente().setText("CLI " + String.valueOf(modelo.numeroid() + 1));
             vista.getTxtidcliente().setEnabled(false);
 
         } else {
@@ -124,10 +124,14 @@ public class ControladorCliente {
     }
 
     private void crearEditarcliente() {
-
+        int id;
         if (vista.getJdCliente().getName().contentEquals("C")) {
-          
-            int id = modelo.numeroid() + 1;
+
+            if (modelo.numeroid() == 0) {
+                id = 1;
+            } else {
+                id = modelo.numeroid() + 1;
+            }
 
             String cedula = vista.getTxtcedula().getText();
             String nombre1 = vista.getTxtnombre().getText();
@@ -141,7 +145,7 @@ public class ControladorCliente {
             Modelo_Cliente clienteP = new Modelo_Cliente();
 
             clienteP.setCl_ID(id);
-         
+
             clienteP.setPrs_cedula(cedula);
             clienteP.setPrs_nombre1(nombre1);
             clienteP.setPrs_nombre2(nombre2);
@@ -151,21 +155,25 @@ public class ControladorCliente {
             clienteP.setPrs_telefono(telefono);
             clienteP.setPrs_email(email);
 
-            
-            
-            
             Modelo_Cliente cliente = new Modelo_Cliente();
-            
-               cliente.setPrs_ID(id);
-               cliente.setCl_ID(id);
-               
-            if (clienteP.setpersona() && cliente.setcliente()) {
-                JOptionPane.showMessageDialog(vista, "Cliente registrada exitosamente");
-                vista.setVisible(true);
-                vista.getJdCliente().setVisible(false);
+
+            cliente.setPrs_ID(id);
+            cliente.setCl_ID(id);
+
+            if (clienteP.setpersona()) {
+//                JOptionPane.showMessageDialog(vista, "Cliente registrada exitosamente");
+//                vista.setVisible(true);
+//                vista.getJdCliente().setVisible(false);
+                if (cliente.setcliente()) {
+                    JOptionPane.showMessageDialog(vista, "Cliente registrada exitosamente");
+                    vista.setVisible(true);
+                    vista.getJdCliente().setVisible(false);
+                }else{
+                    JOptionPane.showMessageDialog(vista, "fallo cliente");
+                }
 
             } else {
-                JOptionPane.showMessageDialog(vista, "Error , datos No guardados");
+                JOptionPane.showMessageDialog(vista, "fallo persona");
 
             }
 
