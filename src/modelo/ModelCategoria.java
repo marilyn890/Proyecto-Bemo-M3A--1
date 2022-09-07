@@ -28,7 +28,6 @@ public class ModelCategoria extends Categoria {
     }
 
     public List<Categoria> getcategorias() {
-        conn.OCconection();
 
         List<Categoria> listaCategorias = new ArrayList<>();
         String sql = "select * from categoria";

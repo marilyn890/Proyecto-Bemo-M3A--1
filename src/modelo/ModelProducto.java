@@ -28,7 +28,6 @@ public class ModelProducto extends Productos {
     }
 
     public List<Productos> getproductos() {
-        conn.OCconection();
 
         List<Productos> listaProductos = new ArrayList<>();
         String sql = "select * from productos";
