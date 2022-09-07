@@ -36,13 +36,15 @@ public class Modelo_Cliente extends Cliente {
     }
 
     public List<Cliente> getclientes() {
+
+        conexion.OCconection();
         List<Cliente> listaclientes = new ArrayList<Cliente>();
 
         String sql = " select c.cli_id,p.pers_id,p.pers_cedula,p.pers_nombre1,p.pers_nombre2,p.pers_apellido1,p.pers_apellido2,p.pers_direccion,p.pers_telefono,p.pers_email "
-                + "    from cliente c "
-                + "    join persona p "
-                + "    on (p.pers_id = c.pers_id);"
-                + "    ";
+                + " from cliente c "
+                + " join persona p "
+                + " on (p.pers_id = c.pers_id)";
+
         ResultSet rs = conexion.consulta(sql);
         byte[] bytea;
         try {
@@ -75,13 +77,41 @@ public class Modelo_Cliente extends Cliente {
         return listaclientes;
     }
 
+    public int numeroid() {
+
+        conexion.OCconection();
+        int id =0;
+        String sql = "select max(pers_id) from persona";
+        ResultSet rs = conexion.consulta(sql);
+
+        try {
+            while (rs.next()) {
+               id= rs.getInt(1);
+             
+             
+
+            }
+        } catch (Exception e) {
+            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        try {
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return id;
+
+    }
+
     public boolean setpersona() {
         String sql = "insert into persona (pers_id,pers_cedula,pers_nombre1,pers_nombre2,pers_apellido1,pers_apellido2,pers_direccion,pers_telefono,pers_email )"
-                + "VALUES (?,?,?,?,?,?,?,?,?);";
+                + "VALUES (?,?,?,?,?,?,?,?,?)";
 
         try {
             //  PreparedStatement ps = mpgc.
-            PreparedStatement ps = conexion.getConex().prepareStatement(sql);
+            PreparedStatement ps = conexion.OCconection().prepareStatement(sql);
             ps.setInt(1, getPrs_ID());
             ps.setString(2, getPrs_cedula());
             ps.setString(3, getPrs_nombre1());
@@ -91,7 +121,7 @@ public class Modelo_Cliente extends Cliente {
             ps.setString(7, getPrs_direccion());
             ps.setString(8, getPrs_telefono());
             ps.setString(9, getPrs_email());
-            ps.executeUpdate();
+           ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, ex);
@@ -101,10 +131,10 @@ public class Modelo_Cliente extends Cliente {
     }
 
     public boolean setcliente() {
-        String sql = "insert into cliente (cli_id,pers_id) values (?,?);";
+        String sql = "insert into cliente (cli_id,pers_id) values (?,?)";
         try {
             //  PreparedStatement ps = mpgc.
-            PreparedStatement ps = conexion.getConex().prepareStatement(sql);
+            PreparedStatement ps = conexion.OCconection().prepareStatement(sql);
             ps.setInt(1, getCl_ID());
             ps.setInt(2, getPrs_ID());
 

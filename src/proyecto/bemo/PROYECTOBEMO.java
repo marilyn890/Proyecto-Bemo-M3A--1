@@ -4,6 +4,10 @@
  */
 package proyecto.bemo;
 
+import Controlador.ControladorCliente;
+import VIsta.ClientesProveedores;
+import modelo.MConexion.Modelo_Cliente;
+
 /**
  *
  * @author OWNER
@@ -15,9 +19,16 @@ public class PROYECTOBEMO {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        modelo.OCconection oc = new modelo.OCconection();
-        
-        oc.getConex();
+//        modelo.OCconection oc = new modelo.OCconection();
+//        
+//        oc.getConex();
+
+     Modelo_Cliente modelo = new Modelo_Cliente();
+     ClientesProveedores vista = new ClientesProveedores();
+     ControladorCliente control = new ControladorCliente(modelo, vista);
+     
+     
+     control.iniciarcontrol();
     }
     
 }

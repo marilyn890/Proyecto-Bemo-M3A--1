@@ -32,6 +32,10 @@ public class Persona {
         this.prs_telefono = prs_telefono;
         this.prs_email = prs_email;
     }
+
+    public Persona(int prs_ID) {
+        this.prs_ID = prs_ID;
+    }
     
     
 

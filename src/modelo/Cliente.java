@@ -13,7 +13,8 @@ public class Cliente extends Persona {
 
     private int cl_ID;
 
-    public Cliente(int cl_ID) {
+    public Cliente(int cl_ID,int prs_ID) {
+        super(prs_ID);
         this.cl_ID = cl_ID;
     }
 
@@ -21,6 +22,16 @@ public class Cliente extends Persona {
         super(prs_ID, prs_cedula, prs_nombre1, prs_nombre2, prs_apellido1, prs_apellido2, prs_direccion, prs_telefono, prs_email);
         this.cl_ID = cl_ID;
     }
+
+    public Cliente(int cl_ID) {
+        this.cl_ID = cl_ID;
+    }
+
+    
+    
+    
+    
+    
 
     public Cliente() {
         super();
