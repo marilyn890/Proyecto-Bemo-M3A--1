@@ -20,7 +20,7 @@ public class OCconection {
     String cadenaConexion = "jdbc:oracle:thin:@localhost:1521:XE";
     String pgUsuario = "EDDY";
     String pgContra = "1234";
-    Connection conex;
+    public Connection conex;
     
     public OCconection() {
 
