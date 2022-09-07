@@ -4,6 +4,10 @@
  */
 package VIsta;
 
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author OWNER
@@ -17,6 +21,57 @@ public class ClientesProveedores extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getBtncargardatoscliente() {
+        return btncargardatoscliente;
+    }
+
+    public void setBtncargardatoscliente(JButton btncargardatoscliente) {
+        this.btncargardatoscliente = btncargardatoscliente;
+    }
+
+    public JButton getBtneliminarcliente() {
+        return btneliminarcliente;
+    }
+
+    public void setBtneliminarcliente(JButton btneliminarcliente) {
+        this.btneliminarcliente = btneliminarcliente;
+    }
+
+    public JButton getBtnmodificarcliente() {
+        return btnmodificarcliente;
+    }
+
+    public void setBtnmodificarcliente(JButton btnmodificarcliente) {
+        this.btnmodificarcliente = btnmodificarcliente;
+    }
+
+    public JButton getBtnnuevocliente() {
+        return btnnuevocliente;
+    }
+
+    public void setBtnnuevocliente(JButton btnnuevocliente) {
+        this.btnnuevocliente = btnnuevocliente;
+    }
+
+    public JTable getTablaclientes() {
+        return tablaclientes;
+    }
+
+    public void setTablaclientes(JTable tablaclientes) {
+        this.tablaclientes = tablaclientes;
+    }
+
+    public JTextField getTxtbuscarcliente() {
+        return txtbuscarcliente;
+    }
+
+    public void setTxtbuscarcliente(JTextField txtbuscarcliente) {
+        this.txtbuscarcliente = txtbuscarcliente;
+    }
+
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,17 +86,17 @@ public class ClientesProveedores extends javax.swing.JFrame {
         jButton25 = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        jButton27 = new javax.swing.JButton();
+        btnnuevocliente = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
-        jButton28 = new javax.swing.JButton();
+        btnmodificarcliente = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jButton29 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton23 = new javax.swing.JButton();
+        txtbuscarcliente = new javax.swing.JTextField();
+        btneliminarcliente = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jButton24 = new javax.swing.JButton();
+        tablaclientes = new javax.swing.JTable();
+        btncargardatoscliente = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jButton30 = new javax.swing.JButton();
         jButton31 = new javax.swing.JButton();
@@ -83,12 +138,12 @@ public class ClientesProveedores extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel14.setText("Hay");
 
-        jButton27.setText("Nuevo cliente");
+        btnnuevocliente.setText("Nuevo cliente");
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel15.setText("clientes registrados.");
 
-        jButton28.setText("Modificar client.");
+        btnmodificarcliente.setText("Modificar client.");
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel16.setText("00");
@@ -97,9 +152,9 @@ public class ClientesProveedores extends javax.swing.JFrame {
 
         jLabel17.setText("Para buscar ingresa o el nombre, apellido, cedula o numero telefonico:");
 
-        jButton23.setText("Eliminar client.");
+        btneliminarcliente.setText("Eliminar client.");
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tablaclientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -110,9 +165,9 @@ public class ClientesProveedores extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(tablaclientes);
 
-        jButton24.setText("CARGAR DATOS");
+        btncargardatoscliente.setText("CARGAR DATOS");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,17 +181,17 @@ public class ClientesProveedores extends javax.swing.JFrame {
                         .addComponent(jLabel17)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                        .addComponent(jButton27)
+                        .addComponent(txtbuscarcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                        .addComponent(btnnuevocliente)
                         .addGap(30, 30, 30)
-                        .addComponent(jButton23)
+                        .addComponent(btneliminarcliente)
                         .addGap(26, 26, 26)
-                        .addComponent(jButton28)
+                        .addComponent(btnmodificarcliente)
                         .addGap(52, 52, 52))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jButton24)
+                .addComponent(btncargardatoscliente)
                 .addGap(18, 18, 18)
                 .addComponent(jButton26)
                 .addGap(18, 18, 18)
@@ -161,10 +216,10 @@ public class ClientesProveedores extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField4))
+                        .addComponent(btneliminarcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnnuevocliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnmodificarcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtbuscarcliente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
@@ -174,7 +229,7 @@ public class ClientesProveedores extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btncargardatoscliente, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -234,7 +289,7 @@ public class ClientesProveedores extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                         .addComponent(jButton32)
                         .addGap(30, 30, 30)
                         .addComponent(jButton35)
@@ -341,7 +396,7 @@ public class ClientesProveedores extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                         .addComponent(jButton41)
                         .addGap(30, 30, 30)
                         .addComponent(jButton37)
@@ -404,19 +459,23 @@ public class ClientesProveedores extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(236, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(235, 235, 235))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -427,12 +486,12 @@ public class ClientesProveedores extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
+    private javax.swing.JButton btncargardatoscliente;
+    private javax.swing.JButton btneliminarcliente;
+    private javax.swing.JButton btnmodificarcliente;
+    private javax.swing.JButton btnnuevocliente;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
@@ -468,11 +527,11 @@ public class ClientesProveedores extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTable tablaclientes;
+    private javax.swing.JTextField txtbuscarcliente;
     // End of variables declaration//GEN-END:variables
 }
