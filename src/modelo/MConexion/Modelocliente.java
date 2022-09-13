@@ -5,7 +5,6 @@
  */
 package modelo.MConexion;
 
-import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,19 +19,19 @@ import modelo.OCconection;
  *
  * @author Abel Gomez
  */
-public class Modelo_Cliente extends Cliente {
+public class Modelocliente extends Cliente {
 
-    OCconection conexion = new OCconection();
+OCconection conexion = new OCconection();
 
-    public Modelo_Cliente(int cl_ID) {
+    public Modelocliente(int cl_ID) {
         super(cl_ID);
     }
 
-    public Modelo_Cliente(int cl_ID, int prs_ID, String prs_cedula, String prs_nombre1, String prs_nombre2, String prs_apellido1, String prs_apellido2, String prs_direccion, String prs_telefono, String prs_email) {
+    public Modelocliente(int cl_ID, int prs_ID, String prs_cedula, String prs_nombre1, String prs_nombre2, String prs_apellido1, String prs_apellido2, String prs_direccion, String prs_telefono, String prs_email) {
         super(cl_ID, prs_ID, prs_cedula, prs_nombre1, prs_nombre2, prs_apellido1, prs_apellido2, prs_direccion, prs_telefono, prs_email);
     }
 
-    public Modelo_Cliente() {
+    public Modelocliente() {
     }
 
     public List<Cliente> getclientes() {
@@ -63,36 +62,69 @@ public class Modelo_Cliente extends Cliente {
                 listaclientes.add(cliente);
             }
         } catch (Exception e) {
-            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, e);
         }
 
         try {
             rs.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return listaclientes;
     }
 
-    public int numeroid() {
-        int id =0;
-        String sql = "select max(pers_id) from persona";
+//    public int numeroidclinte() {
+//        int id = 0;
+//        String sql = " SELECT cli_id "
+//                + "   FROM cliente "
+//                + "  WHERE pers_id = "
+//                + "       ("
+//                + "        select max(cli_id) from cliente "
+//                + "        )";
+//        ResultSet rs = conexion.consulta(sql);
+//
+//        try {
+//            while (rs.next()) {
+//                id = rs.getInt(1);
+//
+//            }
+//        } catch (Exception e) {
+//            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, e);
+//        }
+//
+//        try {
+//            rs.close();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        return id;
+//
+//    }
+    public int numeroidperona() {
+        int id = 0;
+        String sql = " SELECT pers_id "
+                + "   FROM persona "
+                + "  WHERE pers_id ="
+                + "       ("
+                + "        select max(pers_id) from persona"
+                + "        )";
         ResultSet rs = conexion.consulta(sql);
 
         try {
             while (rs.next()) {
-               id= rs.getInt(1);
-            
+                id = rs.getInt(1);
+
             }
         } catch (Exception e) {
-            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, e);
         }
 
         try {
             rs.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return id;
@@ -100,7 +132,7 @@ public class Modelo_Cliente extends Cliente {
     }
 
     public boolean setpersona() {
-        String sql = "insert into persona (pers_id,pers_cedula,pers_nombre1,pers_nombre2,pers_apellido1,pers_apellido2,pers_direccion,pers_telefono,pers_email )"
+        String sql = "insert into persona (pers_id,pers_cedula,pers_nombre1,pers_nombre2,pers_apellido1,pers_apellido2,pers_direccion,pers_telefono,pers_email ) "
                 + "VALUES (?,?,?,?,?,?,?,?,?)";
 
         try {
@@ -118,7 +150,7 @@ public class Modelo_Cliente extends Cliente {
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
-            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
 
@@ -135,7 +167,7 @@ public class Modelo_Cliente extends Cliente {
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
-            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
 
@@ -143,16 +175,15 @@ public class Modelo_Cliente extends Cliente {
 
     public boolean updatecliente() {
 
-        String sql = "  update  persona p INNER JOIN   cliente c "
-                + "  on (p.pers_id = c.pers_id) "
-                + "  set  pers_cedula = ? "
-                + "  ,p.pers_nombre1= ?,p.pers_nombre2=?"
-                + "  ,p.pers_apellido1=? "
-                + "  ,p.pers_apellido2=? "
-                + "  ,p.pers_direccion=?,"
-                + "   p.pers_telefono=?"
-                + "  ,p.pers_email =?"
-                + "  where c.cli_id = " + getCl_ID() + ";";
+        String sql = "update persona  set pers_cedula = ?,"
+                + "pers_nombre1 =  ?,"
+                + "pers_nombre2 = ?,"
+                + "pers_apellido1 = ?,"
+                + "pers_apellido2 = ?,"
+                + "pers_direccion = ?,"
+                + "pers_telefono = ?,"
+                + "pers_email= ? "
+                + "where pers_id = " + getPrs_ID() ;
 
         try {
             PreparedStatement ps = conexion.getConex().prepareStatement(sql);
@@ -168,7 +199,7 @@ public class Modelo_Cliente extends Cliente {
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
-            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
 
@@ -176,36 +207,43 @@ public class Modelo_Cliente extends Cliente {
 
     public boolean removecliente() {
 
-        String sql = "DELETE FROM  cliente WHERE  cli_id='" + getCl_ID() + "';";
+        String sql = "DELETE FROM  cliente WHERE  cli_id=" + getPrs_ID() ;
 
         return conexion.accion(sql);
     }
 
     public boolean removepersona() {
 
-        String sql = "DELETE FROM  persona WHERE  pers_id='" + getPrs_ID() + "';";
+        String sql = "DELETE FROM  persona WHERE  pers_id =" + getPrs_ID() ;
 
         return conexion.accion(sql);
     }
 
     public List<Cliente> buscarcliente(String filtro) {
-
         List<Cliente> listaclientes = new ArrayList<Cliente>();
 
         //  String sqlID = "select idpersona,nombres,apellidos,fechanacimiento,telefono,sexo,sueldo,cupo  from  persona  where idpersona LIKE '" + filtro + "';";
-        String sql = "  select c.cli_id,p.pers_id,p.pers_cedula,p.pers_nombre1,p.pers_nombre2,p.pers_apellido1,p.pers_apellido2,p.pers_direccion,p.pers_telefono,p.pers_email "
-                + "    from cliente c "
-                + "    join persona p "
-                + "    on (p.pers_id = c.pers_id) "
-                + "    where  UPPER(p.pers_nombre1) LIKE UPPER ('" + filtro + "') OR"
-                + "    UPPER (p.pers_cedula) like upper ('" + filtro + "')  or "
-                + "    upper (p.pers_apellido1) like upper ('" + filtro + "') or "
-                + "    upper (p.pers_telefono) like upper ('" + filtro + "') ;";
+//        String sql = "select c.cli_id,p.pers_id,p.pers_cedula,p.pers_nombre1,p.pers_nombre2,p.pers_apellido1,p.pers_apellido2,p.pers_direccion,p.pers_telefono,p.pers_email "
+//                + "from  persona  "
+//                + " where UPPER(idpersona) LIKE UPPER ('" + filtro + "') or "
+//                + " UPPER(nombres) LIKE UPPER ('" + filtro + "') or"
+//                + " UPPER(apellidos) LIKE UPPER ('" + filtro + "') or"
+//                + " UPPER(sexo) LIKE UPPER ('" + filtro + "');";
+        String sql = " select c.cli_id,p.pers_id,p.pers_cedula,p.pers_nombre1,p.pers_nombre2,p.pers_apellido1,p.pers_apellido2,p.pers_direccion,p.pers_telefono,p.pers_email "
+                + " from cliente c "
+                + " join persona p "
+                + " on (p.pers_id = c.pers_id)"
+                + " where "
+                + " UPPER(p.pers_cedula) LIKE UPPER ('" + filtro + "') or"
+                + " UPPER(p.pers_nombre1) LIKE UPPER ('" + filtro + "') or"
+                + " UPPER(p.pers_nombre2) LIKE UPPER ('" + filtro + "') or "
+                + " UPPER(p.pers_apellido1) LIKE UPPER ('" + filtro + "') or "
+                + " UPPER(p.pers_apellido2) LIKE UPPER ('" + filtro + "') or "
+                + " UPPER(p.pers_direccion) LIKE UPPER ('" + filtro + "')  ";
         ResultSet rs = conexion.consulta(sql);
 
         try {
             while (rs.next()) {
-
                 Cliente cliente = new Cliente();
 
                 cliente.setCl_ID(rs.getInt(1));
@@ -222,16 +260,17 @@ public class Modelo_Cliente extends Cliente {
                 listaclientes.add(cliente);
             }
         } catch (Exception e) {
-            Logger.getLogger(OCconection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, e);
         }
 
         try {
             rs.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Modelo_Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Modelocliente.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return listaclientes;
     }
+
 }

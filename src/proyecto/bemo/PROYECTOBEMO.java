@@ -4,9 +4,8 @@
  */
 package proyecto.bemo;
 
-import Controlador.ControladorCliente;
-import VIsta.ClientesProveedores;
-import modelo.MConexion.Modelo_Cliente;
+import Controlador.ControlPrincipal;
+import VIsta.vistamenuprincipal;
 
 /**
  *
@@ -23,12 +22,10 @@ public class PROYECTOBEMO {
 //        
 //        oc.getConex();
 
-     Modelo_Cliente modelo = new Modelo_Cliente();
-     ClientesProveedores vista = new ClientesProveedores();
-     ControladorCliente control = new ControladorCliente(modelo, vista);
-     
-     
-     control.iniciarcontrol();
+        vistamenuprincipal vista = new vistamenuprincipal();
+        ControlPrincipal controller = new ControlPrincipal(vista);
+        controller.iniciaControl();
+
     }
-    
+
 }

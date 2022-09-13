@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class OCconection {
     String cadenaConexion = "jdbc:oracle:thin:@localhost:1521:XE";
-    String pgUsuario = "EDDY";
+    String pgUsuario = "abel";
     String pgContra = "1234";
     public Connection conex;
     
