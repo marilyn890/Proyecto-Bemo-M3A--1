@@ -70,6 +70,9 @@ public class vistamenuprincipal extends javax.swing.JFrame {
         btncrudclientes = new javax.swing.JButton();
         btncrudproveedores = new javax.swing.JButton();
         jdpprincipal = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -99,7 +102,7 @@ public class vistamenuprincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(btncrudproveedores);
 
-        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 12, 1210, 70));
+        getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 280, 70));
 
         jdpprincipal.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -115,6 +118,14 @@ public class vistamenuprincipal extends javax.swing.JFrame {
         );
 
         getContentPane().add(jdpprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1210, 720));
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
         setLocationRelativeTo(null);
@@ -166,6 +177,9 @@ public class vistamenuprincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncrudclientes;
     private javax.swing.JButton btncrudproveedores;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JDesktopPane jdpprincipal;
     // End of variables declaration//GEN-END:variables

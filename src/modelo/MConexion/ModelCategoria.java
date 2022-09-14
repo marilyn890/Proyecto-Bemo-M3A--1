@@ -12,16 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.Categoria;
-import modelo.OCconection;
 
 /**
  *
  * @author Abel Gomez
  */
-public class ModelCategoria extends Categoria {
+public class ModelCategoria extends modelo.Categoria {
 
-    OCconection conn = new OCconection();
+    modelo.OCconection conn = new modelo.OCconection();
 
     public ModelCategoria() {
     }
@@ -30,14 +28,14 @@ public class ModelCategoria extends Categoria {
         super(ctg_ID, ctg_nombre);
     }
 
-    public List<Categoria> getcategorias() {
+    public List<modelo.Categoria> getcategorias() {
         
-        List<Categoria> listaCategorias = new ArrayList<>();
-        String sql = "select * from categoria";
+        List<modelo.Categoria> listaCategorias = new ArrayList<>();
+        String sql = "select * from categoria order by cate_ID ASC";
         ResultSet rs = conn.consulta(sql);
         try {
             while (rs.next()) {
-                Categoria categoria = new Categoria();
+                modelo.Categoria categoria = new modelo.Categoria();
                 categoria.setCtg_ID(rs.getInt(1));
                 categoria.setCtg_nombre(rs.getString(2));
               
