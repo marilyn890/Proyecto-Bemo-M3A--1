@@ -4,6 +4,8 @@
  */
 package VIsta;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author OWNER
@@ -15,6 +17,14 @@ public class FacturacionVentas extends javax.swing.JFrame {
      */
     public FacturacionVentas() {
         initComponents();
+    }
+
+    public JButton getBtsalirMenu() {
+        return btsalirMenu;
+    }
+
+    public void setBtsalirMenu(JButton btsalirMenu) {
+        this.btsalirMenu = btsalirMenu;
     }
 
     /**
@@ -46,7 +56,7 @@ public class FacturacionVentas extends javax.swing.JFrame {
         btAgregarCliente3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btsalirMenu = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -175,7 +185,7 @@ public class FacturacionVentas extends javax.swing.JFrame {
 
         jButton6.setText("+ Cotizar producto");
 
-        jButton7.setText("Regresar al menú");
+        btsalirMenu.setText("Regresar al menú");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -184,7 +194,7 @@ public class FacturacionVentas extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btsalirMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btAgregarCliente4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btAgregarCliente1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -215,7 +225,7 @@ public class FacturacionVentas extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btsalirMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -323,13 +333,13 @@ public class FacturacionVentas extends javax.swing.JFrame {
     private javax.swing.JButton btAgregarCliente2;
     private javax.swing.JButton btAgregarCliente3;
     private javax.swing.JButton btAgregarCliente4;
+    private javax.swing.JButton btsalirMenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

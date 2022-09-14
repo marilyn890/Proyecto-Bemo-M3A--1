@@ -8,7 +8,7 @@ package VIsta;
  *
  * @author OWNER
  */
-public class Cotazacion extends javax.swing.JFrame {
+public class Cotazacion extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Cotazacion
