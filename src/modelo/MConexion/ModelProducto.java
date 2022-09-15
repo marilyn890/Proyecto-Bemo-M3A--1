@@ -1,7 +1,5 @@
-se Tools | Templates
- * and open the template in the editor.
- */
-package modelo;
+
+package modelo.MConexion;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,9 +22,13 @@ public class ModelProducto extends modelo.Productos {
     public ModelProducto() {
     }
 
-    public ModelProducto(int prd_ID, String prd_nombre, double prd_precio, int prd_IDCategoria, String prd_nombreCategoria) {
-        super(prd_ID, prd_nombre, prd_precio, prd_IDCategoria, prd_nombreCategoria);
+    public ModelProducto(int prd_ID, String prd_nombre, double prd_precio, String prd_nombreCategoria, int prd_IDCategoria) {
+        super(prd_ID, prd_nombre, prd_precio, prd_nombreCategoria, prd_IDCategoria);
     }
+
+    
+
+    
 
     public List<modelo.Productos> getproductos() {
 
