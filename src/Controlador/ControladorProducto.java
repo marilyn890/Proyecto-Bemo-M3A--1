@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.xml.ws.Holder;
 import modelo.Categoria;
+import modelo.MConexion.ModelCategoria;
 import modelo.MConexion.ModelProducto;
 import modelo.MConexion.ModelProducto;
 import modelo.OCconection;
@@ -30,7 +31,7 @@ public class ControladorProducto {
     private VIsta.RegistrosdeFacturasGastosBalances vistaPro;
     private VIsta.Categorias vistcate = new VIsta.Categorias();
 
-    public ControladorProducto(MConexion.ModelProducto modeloPro, RegistrosdeFacturasGastosBalances vistaPro) {
+    public ControladorProducto(ModelProducto modeloPro, RegistrosdeFacturasGastosBalances vistaPro) {
         this.modeloPro = modeloPro;
         this.vistaPro = vistaPro;
         vistaPro.setVisible(true);
@@ -225,7 +226,8 @@ public class ControladorProducto {
     }
 
     private void abrirCategoria() {
-        modelo.MConexion.ModelCategoria modcate = new modelo.MConexion.ModelCategoria());
+        modelo.MConexion.ModelCategoria modcate = new modelo.MConexion.ModelCategoria();
+        
 
         ControladorCategoria contcate = new ControladorCategoria(modcate, vistcate);
         contcate.inicioControl();

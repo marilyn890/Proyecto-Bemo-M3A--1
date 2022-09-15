@@ -35,6 +35,7 @@ public class ControlPrincipal {
 
         vistamenuprin.getBtncrudclientes().addActionListener(l -> crudclientes());
         vistamenuprin.getBtncrudproveedores().addActionListener(l->crudproveedores());
+        vistamenuprin.getjButton1().addActionListener(l->abrirproducto());
     }
 
     private void crudclientes() {
@@ -62,6 +63,13 @@ public class ControlPrincipal {
         
         controlproveedor.iniciarcontrol();
 
+    }
+
+    private void abrirproducto() {
+ modelo.MConexion.ModelProducto productito = new modelo.MConexion.ModelProducto();
+ VIsta.RegistrosdeFacturasGastosBalances vistita = new VIsta.RegistrosdeFacturasGastosBalances();
+ Controlador.ControladorProducto controladorsito = new Controlador.ControladorProducto(productito, vistita);
+ controladorsito.iniciaControl();
     }
 
 }

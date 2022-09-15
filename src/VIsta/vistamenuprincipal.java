@@ -22,6 +22,15 @@ public class vistamenuprincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+    
+
     public JButton getBtncrudclientes() {
         return btncrudclientes;
     }
@@ -69,6 +78,7 @@ public class vistamenuprincipal extends javax.swing.JFrame {
         jToolBar1 = new javax.swing.JToolBar();
         btncrudclientes = new javax.swing.JButton();
         btncrudproveedores = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jdpprincipal = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -101,6 +111,12 @@ public class vistamenuprincipal extends javax.swing.JFrame {
             }
         });
         jToolBar1.add(btncrudproveedores);
+
+        jButton1.setText("Productos");
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton1);
 
         getContentPane().add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 280, 70));
 
@@ -177,6 +193,7 @@ public class vistamenuprincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncrudclientes;
     private javax.swing.JButton btncrudproveedores;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
